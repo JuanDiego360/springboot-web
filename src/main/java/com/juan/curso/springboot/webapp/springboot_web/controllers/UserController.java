@@ -5,15 +5,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.RequestParam;
 
+import com.juan.curso.springboot.webapp.springboot_web.models.User;
+
 
 @Controller
 public class UserController {
     
-    @GetMapping("/details2")
+    @GetMapping("/details")
     public String details(Model model) {
+        
+        User user = new User("Juan","Florez");
         model.addAttribute("title", "Hola Mundo Sprint boot");
-        model.addAttribute("name","Juan");
-        model.addAttribute("lastname","Florez");
+        model.addAttribute("user",user);
         return "details";
     }
 }
