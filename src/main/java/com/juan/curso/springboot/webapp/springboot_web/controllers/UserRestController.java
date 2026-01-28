@@ -1,6 +1,9 @@
 package com.juan.curso.springboot.webapp.springboot_web.controllers;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +26,24 @@ public class UserRestController {
         userDto.setTitle("Hola Mundo Sprint boot");
 
         return userDto;
+    }
+
+    @GetMapping(path = "/list")
+    public List<User> list() {
+        User user = new User("Juan", "Florez");
+        User user2 = new User("Ana", "Gomez");
+        User user3 = new User("Pedro", "Perez");
+        User user4 = new User("Maria", "Lopez");
+        User user5 = new User("Luis", "Rodriguez");
+
+        List<User> users = Arrays.asList(user, user2, user3, user4, user5);
+        // List<User> users = new ArrayList<>();
+        // users.add(user);
+        // users.add(user2);
+        // users.add(user3);
+        // users.add(user4);
+        // users.add(user5);
+        return users;
     }
 
     @GetMapping(path = "/details-map")
