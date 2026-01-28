@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.juan.curso.springboot.webapp.springboot_web.models.User;
 
-
 @Controller
 public class UserController {
-    
+
     @GetMapping("/details")
     public String details(Model model) {
-        
-        User user = new User("Juan","Florez");
+
+        User user = new User("Juan", "Florez");
+        user.setEmail("juan@correo.com");
         model.addAttribute("title", "Hola Mundo Sprint boot");
-        model.addAttribute("user",user);
+        model.addAttribute("user", user);
         return "details";
     }
 }
