@@ -1,6 +1,7 @@
 package com.juan.curso.springboot.webapp.springboot_web.controllers;
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -26,10 +27,16 @@ public class UserController {
 
     @GetMapping("/list")
     public String list(ModelMap model) {
-        List<User> users = new ArrayList<>();
+        List<User> users = Arrays.asList(
+                new User("Juan", "Florez"),
+                new User("Maria", "Perez", "Maria123@correo.com"),
+                new User("Pedro", "Gomez"),
+                new User("Ana", "Lopez", "Ana123@correo.com"),
+                new User("Luis", "Rodriguez", "Luis123@correo.com"));
 
         model.addAttribute("title", "Listado de usuarios");
         model.addAttribute("users", users);
-        return "list";
+        return "list"; // si modifico el return tengo que modificar el nombre del html en
+                       // resources/templates
     }
 }
