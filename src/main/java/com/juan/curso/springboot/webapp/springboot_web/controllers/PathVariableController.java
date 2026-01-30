@@ -4,7 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,6 +36,12 @@ public class PathVariableController {
 
     @Value("#{ '${config.listOfValues}'.toUpperCase()}")
     private String valuesString;
+
+    @Value("#{${config.ValuesMap}}")
+    private Map<String, Object> valuesMap;
+
+    @Autowired
+    private Environment environment;
 
     @GetMapping("/baz/{message}") // esto es para que el nombre de la variable sea diferente al nombre del
                                   // parametro
@@ -65,10 +73,13 @@ public class PathVariableController {
         Map<String, Object> json = new HashMap<>();
         json.put("username", name);
         json.put("message", message);
+        json.put("MessageEnv", environment.getProperty("config.message"));
         json.put("code", code);
+        json.put("codeEnv", Integer.parseInt(environment.getProperty("config.code")));
         json.put("listOfValues", listOfValues);
         json.put("valuesList", valuesList);
         json.put("valuesString", valuesString);
+        json.put("valuesMap", valuesMap);
         return json;
     }
 }
