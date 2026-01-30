@@ -1,6 +1,7 @@
 package com.juan.curso.springboot.webapp.springboot_web.controllers;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -24,8 +25,15 @@ public class PathVariableController {
     // private String message;
     @Value("${config.code}")
     private Integer code;
+
     @Value("${config.listOfValues}")
-    private String[] listOfValues;
+    private List<String> listOfValues;
+
+    @Value("#{ '${config.listOfValues}'.toUpperCase().split(',')}")
+    private List<String> valuesList;
+
+    @Value("#{ '${config.listOfValues}'.toUpperCase()}")
+    private String valuesString;
 
     @GetMapping("/baz/{message}") // esto es para que el nombre de la variable sea diferente al nombre del
                                   // parametro
@@ -59,6 +67,8 @@ public class PathVariableController {
         json.put("message", message);
         json.put("code", code);
         json.put("listOfValues", listOfValues);
+        json.put("valuesList", valuesList);
+        json.put("valuesString", valuesString);
         return json;
     }
 }
