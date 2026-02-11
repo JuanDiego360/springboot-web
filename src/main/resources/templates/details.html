@@ -15,6 +15,16 @@
         <li th:if="${user.email != null}" th:text="${user.email}"></li>
         <li th:if="${user.email == null}">No existe el correo</li>
     </ul>
+
+    <a th:href="@{/list}">Volver al listado</a> <br>
+    <a th:href="@{'/api/var/values'}">Ver valores de variables de entorno</a> <br>
+    <a th:href="@{'/api/params/foo?message=hola ' + ${user.name} }">pasar parámetros a foo</a> <br>
+    <a th:href="@{'/api/var/bar(text=${user.name}, code=10)'}">Ver valores de variables de entorno con parámetros</a>
+    <br>
+    <a th:href="@{'/api/var/baz/Hola esto es una prueba '}">Ver valores de variables de entorno con parámetros path
+        variable</a> <br>
+    <a th:href="@{'/api/var/baz/Hola ' + ${user.name} }">Ver valores de variables de entorno con parámetros path
+        variable con concatenación de variables</a>
 </body>
 
 </html>

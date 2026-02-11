@@ -1,0 +1,223 @@
+{
+  "main": {
+    "id": "529f1610077a0261",
+    "type": "split",
+    "children": [
+      {
+        "id": "b81bb7087d533261",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a18a849a541d95e9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "apuntes_obsidian/Index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Index"
+            }
+          },
+          {
+            "id": "7a9cec9c6d96646d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "apuntes_obsidian/Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "277562b6212b3691",
+    "type": "split",
+    "children": [
+      {
+        "id": "acf36671ea57dee7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d6ddd8f20ec452b1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de archivos"
+            }
+          },
+          {
+            "id": "46bfb021eb1eb426",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Buscar"
+            }
+          },
+          {
+            "id": "46bc643f9ca14ee0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f2e32d9ed6527b02",
+    "type": "split",
+    "children": [
+      {
+        "id": "f0c7c471c49a1eb1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "16845ce26599e1c2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "apuntes_obsidian/Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Enlaces entrantes de Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf"
+            }
+          },
+          {
+            "id": "30b02b1386f77a53",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "apuntes_obsidian/Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Enlaces salientes de Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf"
+            }
+          },
+          {
+            "id": "990eb3844382cad7",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "5f27635a869d737f",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas las propiedades"
+            }
+          },
+          {
+            "id": "5fd6ac3f4e466c33",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "apuntes_obsidian/Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Esquema de Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false
+    }
+  },
+  "active": "d6ddd8f20ec452b1",
+  "lastOpenFiles": [
+    "apuntes_obsidian/Lesión_16_El_objeto_Model.md",
+    "apuntes_obsidian/Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf.md",
+    "apuntes_obsidian/Imagenes_Obsidian/captura_pantalla_etiquetas.png",
+    "apuntes_obsidian/Imagenes_Obsidian/Screenshot_1.png",
+    "apuntes_obsidian/Imagenes_Obsidian",
+    "apuntes_obsidian/Index.md",
+    "apuntes_obsidian/Lesión_38_Redirect_y_Forward.md",
+    "apuntes_obsidian/Lesión_22_Directiva_if_de_Thymeleaf.md",
+    "apuntes_obsidian/Lesión_21_Api_Rest_listar.md",
+    "apuntes_obsidian/Lesión_19_La_Clase_DTO.md",
+    "apuntes_obsidian/Config_Tomcat_Port.md",
+    "apuntes_obsidian/Apuntes de clase de Spring boot.md",
+    "97b7c83.txt",
+    "32d8058.txt",
+    "ed910ad.txt",
+    "a6014bb.txt",
+    "d1c972d.txt",
+    "48a1496.txt",
+    "apuntes_obsidian"
+  ]
+}
