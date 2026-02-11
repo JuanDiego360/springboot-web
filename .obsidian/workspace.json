@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf"
             }
+          },
+          {
+            "id": "b73d51a0d06340e6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "apuntes_obsidian/Lesión_44_Creando_nuevo_proyecto.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lesión_44_Creando_nuevo_proyecto"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -109,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "apuntes_obsidian/Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf.md",
+                "file": "apuntes_obsidian/Lesión_44_Creando_nuevo_proyecto.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf"
+              "title": "Enlaces entrantes de Lesión_44_Creando_nuevo_proyecto"
             }
           },
           {
@@ -128,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "apuntes_obsidian/Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf.md",
+                "file": "apuntes_obsidian/Lesión_44_Creando_nuevo_proyecto.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Enlaces salientes de Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf"
+              "title": "Enlaces salientes de Lesión_44_Creando_nuevo_proyecto"
             }
           },
           {
@@ -171,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "apuntes_obsidian/Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf.md",
+                "file": "apuntes_obsidian/Lesión_44_Creando_nuevo_proyecto.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf"
+              "title": "Esquema de Lesión_44_Creando_nuevo_proyecto"
             }
           }
         ]
@@ -198,14 +212,17 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "d6ddd8f20ec452b1",
+  "active": "b73d51a0d06340e6",
   "lastOpenFiles": [
-    "apuntes_obsidian/Lesión_16_El_objeto_Model.md",
     "apuntes_obsidian/Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf.md",
+    "apuntes_obsidian/Lesión_44_Creando_nuevo_proyecto.md",
+    "proyecto2",
+    "proyecto1",
+    "apuntes_obsidian/Index.md",
+    "apuntes_obsidian/Lesión_16_El_objeto_Model.md",
     "apuntes_obsidian/Imagenes_Obsidian/captura_pantalla_etiquetas.png",
     "apuntes_obsidian/Imagenes_Obsidian/Screenshot_1.png",
     "apuntes_obsidian/Imagenes_Obsidian",
-    "apuntes_obsidian/Index.md",
     "apuntes_obsidian/Lesión_38_Redirect_y_Forward.md",
     "apuntes_obsidian/Lesión_22_Directiva_if_de_Thymeleaf.md",
     "apuntes_obsidian/Lesión_21_Api_Rest_listar.md",

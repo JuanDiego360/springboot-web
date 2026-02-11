@@ -1,7 +1,7 @@
 # Lesión 42: Directiva href (enlaces) de Thymeleaf
 
 ## Resumen
-
+En esta lección se nos enseñó como pasar enlaces y URL usando href de Thymeleaf
 
 ## Cambios clave
 
