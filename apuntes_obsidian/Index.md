@@ -10,4 +10,4 @@ Aquí están las notas extraídas del historial git de este proyecto, correspond
 - [Lesión 38: Redirect and Forward](Lesión_38_Redirect_y_Forward.md)
 - [Lesión 42: Directiva href (enlaces) de Thymeleaf](Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf)
 - [Lesión 44: Creando nuevo proyecto](Lesión_44_Creando_nuevo_proyecto)
-- 
+- [Lesión 45: Creando la clase Model y la clase Repository](Lesión_45_Creando_la_clase_Model_y_la_clase_Repository)
