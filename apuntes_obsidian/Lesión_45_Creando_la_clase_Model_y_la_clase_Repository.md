@@ -1,7 +1,11 @@
 # Lesión 45: Creando la clase Model y la clase Repository
 
 ## Resumen
-
+En esta clase se nos enseña a crear un modelo llamado `Product` el cual va a tener atributos que son:
+- `id`: que es el identificador
+- `name`: nombre del producto
+- `price`: que es el precio del producto
+además se creo una simulación de la base de los datos en `Repositories` y se creo un método para obtener todos los datos que se tiene en la base de datos.
 
 ## Cambios clave
 
@@ -57,3 +61,12 @@ public class ProductRepository {
 }
 ```
 
+### 3. Implementando método findById en la clase Repository
+
+Creamos un nuevo método para buscar por `id` llamado `findById` 
+
+```java
+public Product findById(Long id) {
+        return data.stream().filter(p -> p.getId().equals(id)).findFirst().orElse(null);
+    }
+```

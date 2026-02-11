@@ -49,7 +49,8 @@
               "title": "Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -211,11 +212,12 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "a18a849a541d95e9",
+  "active": "20d83c7cf620106a",
   "lastOpenFiles": [
+    "apuntes_obsidian/Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf.md",
+    "Lesión_46_Implementando_metodo_findById_en_la_clase_Repository.md",
     "apuntes_obsidian/Lesión_45_Creando_la_clase_Model_y_la_clase_Repository.md",
     "apuntes_obsidian/Index.md",
-    "apuntes_obsidian/Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf.md",
     "proyecto2/springboot_di/target/classes/com/juan/springboot/di/app/springboot_di/repositories/ProductRepository.class",
     "proyecto2/springboot_di/src/main/java/com/juan/springboot/di/app/springboot_di/repositories/ProductRepository.java",
     "proyecto2/springboot_di/target/classes/com/juan/springboot/di/app/springboot_di/models/Product.class",
