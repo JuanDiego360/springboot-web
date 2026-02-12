@@ -16,8 +16,9 @@ public class ProductService {
         // por precio, categoría, etc.
         return repository.findAll().stream().map(p -> {
             Double pricDouble = p.getPrice() * 1.25d;
-            p.setPrice(pricDouble.longValue());
-            return p;
+            // p.setPrice(pricDouble.longValue()); aplicamos el principio de inmutabilidad
+            // no modificamos el objeto original, creamos uno nuevo
+            return new Product(p.getId(), p.getName(), pricDouble.longValue());
         }).collect(Collectors.toList());
     }
 

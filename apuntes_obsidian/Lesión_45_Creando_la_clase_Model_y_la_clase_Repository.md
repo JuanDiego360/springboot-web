@@ -214,3 +214,31 @@ Para que nuestra clase funcione como un punto de acceso a nuestra API, utilizamo
 	- `@PostMapping`: Crear nuevos recursos.
 	- `@PutMapping`: Actualizar recursos.
 	- `@DeleteMapping`: Eliminar recursos.
+
+### 6. aplicamos el principio de inmutabilidad en el método findAll() del ProductService
+
+```java
+public List<Product> findAll() {
+    // por precio, categoría, etc.
+    return repository.findAll().stream().map(p -> {
+        Double pricDouble = p.getPrice() * 1.25d;
+        // p.setPrice(pricDouble.longValue()); aplicamos el principio de inmutabilidad
+        // no modificamos el objeto original, creamos uno nuevo
+        return new Product(p.getId(), p.getName(), pricDouble.longValue());
+    }).collect(Collectors.toList());
+}
+```
+
+### Explicación del principio de inmutabilidad
+
+El principio de inmutabilidad establece que un objeto, una vez creado, no puede ser modificado. Si necesitamos cambiar alguna de sus propiedades, debemos crear un nuevo objeto con los valores deseados.
+
+En el contexto de la programación funcional y el uso de Streams en Java, la inmutabilidad es un concepto clave que promueve:
+
+1. **Código más predecible**: Al no poder modificar objetos existentes, evitamos efectos secundarios inesperados en otras partes del programa que puedan estar usando el mismo objeto.
+
+2. **Facilita el paralelismo**: En entornos concurrentes, si varios hilos acceden a los mismos datos, la inmutabilidad elimina la necesidad de bloqueos o sincronización, ya que los datos no cambian.
+
+3. **Mejor depuración**: Es más fácil rastrear el origen de un valor cuando los objetos no cambian con el tiempo.
+
+En el ejemplo del método `findAll()`, en lugar de modificar el precio del producto original (`p.setPrice(...)`), creamos un **nuevo objeto** `Product` con el precio actualizado. Esto asegura que la lista original devuelta por el repositorio permanezca intacta.
