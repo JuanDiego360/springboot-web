@@ -5,12 +5,12 @@ import java.util.Arrays;
 
 import com.juan.springboot.di.app.springboot_di.models.Product;
 
-public class ProductRepository {
+public class ProductRepositoryImpl implements ProductServices {
 
     private List<Product> data;
 
     // Constructor
-    public ProductRepository() {
+    public ProductRepositoryImpl() {
         this.data = Arrays.asList(
                 new Product(1L, "Laptop", 1000L),
                 new Product(2L, "Mouse", 20L),
@@ -24,11 +24,15 @@ public class ProductRepository {
                 new Product(10L, "Scanner", 100L));
     }
 
+    @Override // se coloca esta anotación porque estamos implementando un método de una
+              // interfaz
     // Metodo para obtener todos los productos
     public List<Product> findAll() {
         return data;
     }
 
+    @Override // se coloca esta anotación porque estamos implementando un método de una
+              // interfaz
     public Product findById(Long id) {
         return data.stream().filter(p -> p.getId().equals(id)).findFirst().orElse(null);
     }

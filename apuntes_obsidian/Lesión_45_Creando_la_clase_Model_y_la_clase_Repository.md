@@ -242,3 +242,22 @@ En el contexto de la programación funcional y el uso de Streams en Java, la inm
 3. **Mejor depuración**: Es más fácil rastrear el origen de un valor cuando los objetos no cambian con el tiempo.
 
 En el ejemplo del método `findAll()`, en lugar de modificar el precio del producto original (`p.setPrice(...)`), creamos un **nuevo objeto** `Product` con el precio actualizado. Esto asegura que la lista original devuelta por el repositorio permanezca intacta.
+
+### 7. Escribiendo las interfaces Repository y Service
+
+Se creó la interfaz `ProductServices` en el paquete `repositories` y se implementó en la clase `ProductServiceImpl` y `ProductServiceImp` en el paquete `services`.
+
+```java
+package com.juan.springboot.di.app.springboot_di.repositories;
+
+import java.util.List;
+
+import com.juan.springboot.di.app.springboot_di.models.Product;
+
+public interface ProductServices {
+
+    public List<Product> findAll();
+
+    public Product findById(Long id);
+}
+```

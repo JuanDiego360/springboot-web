@@ -4,13 +4,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.juan.springboot.di.app.springboot_di.models.Product;
-import com.juan.springboot.di.app.springboot_di.repositories.ProductRepository;
+import com.juan.springboot.di.app.springboot_di.repositories.ProductRepositoryImpl;
+import com.juan.springboot.di.app.springboot_di.repositories.ProductServices;
 
-public class ProductService {
+public class ProductServiceImpl implements ProductServices {
 
-    private ProductRepository repository = new ProductRepository(); // aquí se crea la conexión con el repositorio (base
-                                                                    // de datos o fuente de datos)
+    private ProductRepositoryImpl repository = new ProductRepositoryImpl(); // aquí se crea la conexión con el
+                                                                            // repositorio (base
+    // de datos o fuente de datos)
 
+    @Override
     public List<Product> findAll() {
         // aquí se colocarían las reglas de negocio, por ejemplo, filtrar productos
         // por precio, categoría, etc.
@@ -22,6 +25,7 @@ public class ProductService {
         }).collect(Collectors.toList());
     }
 
+    @Override
     public Product findById(Long id) {
         // aquí se colocarían las reglas de negocio, por ejemplo, filtrar productos
         // por precio, categoría, etc.
