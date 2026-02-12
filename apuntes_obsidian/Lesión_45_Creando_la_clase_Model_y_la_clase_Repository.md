@@ -70,3 +70,107 @@ public Product findById(Long id) {
         return data.stream().filter(p -> p.getId().equals(id)).findFirst().orElse(null);
     }
 ```
+
+### 4. Escribimos la clase Services
+
+Vamos a crear una clase en `Services` que se llame `ProductService` el cual le vamos a crear los siguientes métodos, en el service se manipulan los datos de la siguiente forma:
+
+```java
+public class ProductService {
+    private ProductRepository repository = new ProductRepository(); // aquí se crea la conexión con el repositorio (base
+                                                                    // de datos o fuente de datos)
+    public List<Product> findAll() {
+        // aquí se colocarían las reglas de negocio, por ejemplo, filtrar productos
+        // por precio, categoría, etc.
+        return repository.findAll().stream().map(p -> {
+            Double pricDouble = p.getPrice() * 1.25d;
+            p.setPrice(pricDouble.longValue());
+            return p;
+        }).collect(Collectors.toList());
+    }
+
+    public Product findById(Long id) {
+        // aquí se colocarían las reglas de negocio, por ejemplo, filtrar productos
+        // por precio, categoría, etc.
+        return repository.findById(id);
+    }
+}
+```
+### Explicación de la API de Streams en `findAll()`
+
+En la línea:
+`return repository.findAll().stream().map(p -> { ... }).collect(Collectors.toList());`
+
+Se están utilizando varias funciones de Java para procesar colecciones de forma funcional:
+
+1.  **`repository.findAll()`**: 
+    - Obtiene la colección original de datos (una `List<Product>`). Es el punto de partida.
+
+2.  **`.stream()`**: 
+    - Convierte la lista en un **Stream** (flujo de datos). Imagínalo como una tubería donde los elementos pasan uno tras otro para ser procesados uno a uno.
+
+3.  **`.map(p -> { ... })`**: 
+    - Es una función de **transformación**. Por cada producto `p` que pasa por el flujo, se ejecuta el código dentro de las llaves. 
+    - En este caso, estamos recalculando el precio (`p.getPrice() * 1.25d`) y actualizando el producto. El flujo resultante ahora contiene los productos modificados.
+
+4.  **`.collect(Collectors.toList())`**: 
+    - Los Streams son temporales. Esta operación "recoge" todos los elementos que han pasado por la tubería y los guarda en una nueva **Lista** (`List`).
+
+**En resumen:** Tomas la lista -> Creas un flujo -> Modificas los datos -> Guardas el resultado en una nueva lista.
+
+### Comparativa: ¿Qué hace realmente el Stream?
+
+Para entenderlo mejor, comparemos cómo haríamos lo mismo **sin Stream** (usando un bucle tradicional) y **con Stream**. Ambos fragmentos de código logran el mismo resultado final:
+
+#### 1. Enfoque Tradicional (Sin Stream)
+Este es el enfoque **imperativo**, donde le decimos paso a paso a la computadora qué hacer:
+
+```java
+public List<Product> findAll() {
+    // 1. Obtenemos la lista original
+    List<Product> products = repository.findAll();
+    
+    // 2. Creamos una nueva lista para guardar los resultados
+    List<Product> newProducts = new ArrayList<>();
+
+    // 3. Recorremos la lista manualmente elemento por elemento
+    for (Product p : products) {
+        // 4. Aplicamos la lógica (aumento del 25%)
+        Double priceWithTax = p.getPrice() * 1.25d;
+        p.setPrice(priceWithTax.longValue());
+        
+        // 5. Agregamos el producto modificado a la nueva lista
+        newProducts.add(p);
+    }
+
+    // 6. Devolvemos la nueva lista procesada
+    return newProducts;
+}
+```
+
+#### 2. Enfoque con Stream (Funcional)
+Aquí usamos un enfoque **declarativo**, donde describimos **qué** queremos conseguir:
+
+```java
+public List<Product> findAll() {
+    return repository.findAll() // 1. Obtenemos los datos
+        .stream()               // 2. Abrimos la "tubería" (el flujo)
+        .map(p -> {             // 3. Transformamos cada elemento
+            Double pricDouble = p.getPrice() * 1.25d;
+            p.setPrice(pricDouble.longValue());
+            return p;
+        })
+        .collect(Collectors.toList()); // 4. Guardamos todo en una nueva lista
+}
+```
+
+### ¿Cuál es la diferencia clave?
+
+| Característica | Sin Stream (Bucle `for`) | Con Stream |
+| :--- | :--- | :--- |
+| **Estilo** | **Imperativo**: Describe detalladamente el "cómo" hacerlo. | **Declarativo**: Describe el "qué" quieres que pase. |
+| **Concisión** | Más verboso (muchas líneas para pasos mecánicos). | Muy conciso (se enfoca en la lógica). |
+| **Mantenimiento** | Si quieres filtrar, debes añadir un `if` dentro del `for`. | Si quieres filtrar, solo intercalas un `.filter(...)`. |
+
+El **Stream** funciona como una **cinta transportadora automatizada**: tú instalas las estaciones de trabajo (`map`, `filter`, `sort`) y al final recoges el producto terminado en una caja (`collect`). Sin el Stream, tú tendrías que cargar cada producto de una mesa a otra manualmente usando el bucle `for`.
+

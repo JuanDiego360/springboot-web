@@ -22,20 +22,6 @@
             }
           },
           {
-            "id": "20d83c7cf620106a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "apuntes_obsidian/Lesión_45_Creando_la_clase_Model_y_la_clase_Repository.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lesión_45_Creando_la_clase_Model_y_la_clase_Repository"
-            }
-          },
-          {
             "id": "7a9cec9c6d96646d",
             "type": "leaf",
             "state": {
@@ -49,8 +35,7 @@
               "title": "Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -212,12 +197,14 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "20d83c7cf620106a",
+  "active": "a18a849a541d95e9",
   "lastOpenFiles": [
-    "apuntes_obsidian/Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf.md",
-    "Lesión_46_Implementando_metodo_findById_en_la_clase_Repository.md",
     "apuntes_obsidian/Lesión_45_Creando_la_clase_Model_y_la_clase_Repository.md",
     "apuntes_obsidian/Index.md",
+    "apuntes_obsidian/Lesión_42_Directiva_href_(enlaces)_de_Thymeleaf.md",
+    "proyecto2/springboot_di/target/classes/com/juan/springboot/di/app/springboot_di/services/ProductService.class",
+    "proyecto2/springboot_di/src/main/java/com/juan/springboot/di/app/springboot_di/services/ProductService.java",
+    "Lesión_46_Implementando_metodo_findById_en_la_clase_Repository.md",
     "proyecto2/springboot_di/target/classes/com/juan/springboot/di/app/springboot_di/repositories/ProductRepository.class",
     "proyecto2/springboot_di/src/main/java/com/juan/springboot/di/app/springboot_di/repositories/ProductRepository.java",
     "proyecto2/springboot_di/target/classes/com/juan/springboot/di/app/springboot_di/models/Product.class",
@@ -235,8 +222,6 @@
     "apuntes_obsidian/Lesión_19_La_Clase_DTO.md",
     "apuntes_obsidian/Config_Tomcat_Port.md",
     "apuntes_obsidian/Apuntes de clase de Spring boot.md",
-    "97b7c83.txt",
-    "32d8058.txt",
-    "ed910ad.txt"
+    "97b7c83.txt"
   ]
 }
