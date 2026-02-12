@@ -166,11 +166,51 @@ public List<Product> findAll() {
 
 ### ¿Cuál es la diferencia clave?
 
-| Característica | Sin Stream (Bucle `for`) | Con Stream |
-| :--- | :--- | :--- |
-| **Estilo** | **Imperativo**: Describe detalladamente el "cómo" hacerlo. | **Declarativo**: Describe el "qué" quieres que pase. |
-| **Concisión** | Más verboso (muchas líneas para pasos mecánicos). | Muy conciso (se enfoca en la lógica). |
+| Característica    | Sin Stream (Bucle `for`)                                   | Con Stream                                             |
+| :---------------- | :--------------------------------------------------------- | :----------------------------------------------------- |
+| **Estilo**        | **Imperativo**: Describe detalladamente el "cómo" hacerlo. | **Declarativo**: Describe el "qué" quieres que pase.   |
+| **Concisión**     | Más verboso (muchas líneas para pasos mecánicos).          | Muy conciso (se enfoca en la lógica).                  |
 | **Mantenimiento** | Si quieres filtrar, debes añadir un `if` dentro del `for`. | Si quieres filtrar, solo intercalas un `.filter(...)`. |
 
 El **Stream** funciona como una **cinta transportadora automatizada**: tú instalas las estaciones de trabajo (`map`, `filter`, `sort`) y al final recoges el producto terminado en una caja (`collect`). Sin el Stream, tú tendrías que cargar cada producto de una mesa a otra manualmente usando el bucle `for`.
 
+### 5. Escribimos la clase Controller
+
+Vamos a crear una clase en `controllers` que se llame `SomeControllers` el cual le vamos a crear los siguientes métodos:
+
+```java
+@RestController
+@RequestMapping("/api")
+public class SomeController {
+
+    private ProductService service = new ProductService();
+    @GetMapping("/products")
+    public List<Product> list() {
+        return service.findAll();
+    }
+    @GetMapping("/{id}")
+    public Product show(@PathVariable Long id) {
+        return service.findById(id);
+    }
+}
+```
+
+### Explicación de anotaciones en el Controller
+
+Para que nuestra clase funcione como un punto de acceso a nuestra API, utilizamos estas anotaciones clave de Spring Framework:
+
+1.  **`@RestController`**:
+    -   Es la unión de las anotaciones `@Controller` y `@ResponseBody`.
+    -   **Su función:** Le indica a Spring que esta clase es un controlador de tipo REST. A diferencia de un controlador tradicional que busca páginas (vistas) HTML, el `@RestController` devuelve los datos directamente en el cuerpo de la respuesta (usualmente en formato **JSON**).
+
+2.  **`@RequestMapping("/api")`**:
+    -   Define una ruta base para todas las operaciones dentro de esta clase.
+    -   **Su función:** Actúa como un prefijo para las URLs de los métodos. En este caso, todas las rutas de este controlador empezarán con `/api`. 
+    -   **Ejemplo:** Para acceder al método `list()`, que tiene el mapeo `/products`, la URL completa será: `localhost:8080/api/products`. Esto ayuda a organizar y versionar tu API de forma profesional.
+
+3. **Métodos HTTP**: Utiliza anotaciones específicas para mapear acciones:
+
+	- `@GetMapping`: Obtener datos.
+	- `@PostMapping`: Crear nuevos recursos.
+	- `@PutMapping`: Actualizar recursos.
+	- `@DeleteMapping`: Eliminar recursos.
