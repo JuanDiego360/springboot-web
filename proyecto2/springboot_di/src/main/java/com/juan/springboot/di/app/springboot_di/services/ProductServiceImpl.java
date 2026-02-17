@@ -3,14 +3,19 @@ package com.juan.springboot.di.app.springboot_di.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.juan.springboot.di.app.springboot_di.models.Product;
 import com.juan.springboot.di.app.springboot_di.repositories.ProductRepositoryImpl;
 import com.juan.springboot.di.app.springboot_di.repositories.ProductServices;
 
+@Component
 public class ProductServiceImpl implements ProductServices {
 
-    private ProductRepositoryImpl repository = new ProductRepositoryImpl(); // aquí se crea la conexión con el
-                                                                            // repositorio (base
+    @Autowired
+    private ProductRepositoryImpl repository; // aquí se crea la conexión con el
+                                              // repositorio (base
     // de datos o fuente de datos)
 
     @Override
